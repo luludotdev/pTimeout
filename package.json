@@ -22,6 +22,9 @@
   },
   "scripts": {
     "prepublishOnly": "yarn run test && yarn run build",
+    "test": "yarn run check && yarn run lint && yarn run ava",
+    "ava": "nyc --reporter=html --reporter=text ava",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "check": "yarn run build --noEmit",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "prebuild": "rimraf lib",
@@ -35,11 +38,32 @@
   "private": false,
   "devDependencies": {
     "@types/node": "^12.7.2",
+    "ava": "^2.3.0",
+    "coveralls": "^3.0.6",
+    "nyc": "^14.1.1",
     "prettier": "^1.18.2",
     "rimraf": "^3.0.0",
+    "ts-node": "^8.3.0",
     "tslint": "^5.19.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.5.3"
+  },
+  "ava": {
+    "compileEnhancements": false,
+    "files": [
+      "test/**/*.ts"
+    ],
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ]
   }
 }
