@@ -20,6 +20,15 @@
   "engines": {
     "node": ">=8.0.0"
   },
+  "scripts": {
+    "prepublishOnly": "yarn run test && yarn run build",
+    "check": "yarn run build --noEmit",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "prebuild": "rimraf lib",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "dev": "yarn run watch  --sourceMap"
+  },
   "repository": "git@github.com:lolPants/pTimeout.git",
   "author": "Jack Baron <jackmbaron@gmail.com> (https://www.jackbaron.com)",
   "license": "MIT",
