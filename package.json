@@ -10,6 +10,7 @@
     "execution"
   ],
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "directories": {
     "lib": "lib"
   },
@@ -22,5 +23,14 @@
   "repository": "git@github.com:lolPants/pTimeout.git",
   "author": "Jack Baron <jackmbaron@gmail.com> (https://www.jackbaron.com)",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "@types/node": "^12.7.2",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "tslint": "^5.19.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.5.3"
+  }
 }
