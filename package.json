@@ -10,6 +10,15 @@
     "execution"
   ],
   "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "repository": "git@github.com:lolPants/pTimeout.git",
   "author": "Jack Baron <jackmbaron@gmail.com> (https://www.jackbaron.com)",
   "license": "MIT",
