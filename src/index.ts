@@ -27,4 +27,5 @@ const pTimeout: <T>(
   return Promise.race([timeoutFn(milliseconds, error), promise()])
 }
 
+export { TimeoutError } from './error'
 export default pTimeout
