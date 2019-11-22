@@ -9,13 +9,13 @@
     "limit",
     "execution"
   ],
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "./lib/index.js",
+  "module": "./esm/index.js",
+  "types": "./lib/index.d.ts",
+  "sideEffects": false,
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "esm/**/*"
   ],
   "engines": {
     "node": ">=8.0.0"
@@ -27,9 +27,12 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "check": "yarn run build --noEmit",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "prebuild": "rimraf lib",
-    "build": "tsc",
-    "watch": "tsc --watch",
+    "prebuild": "rimraf lib esm",
+    "build:cjs": "ncc build ./src/index.ts -o lib -m",
+    "build:esm": "yarn run compile --module ES6 --outDir esm",
+    "build": "yarn run build:cjs && yarn run build:esm",
+    "compile": "tsc",
+    "watch": "yarn run compile --watch",
     "dev": "yarn run watch  --sourceMap"
   },
   "repository": "git@github.com:lolPants/pTimeout.git",
@@ -38,6 +41,7 @@
   "private": false,
   "devDependencies": {
     "@types/node": "^12.12.11",
+    "@zeit/ncc": "^0.20.5",
     "ava": "^2.4.0",
     "coveralls": "^3.0.8",
     "nyc": "^14.1.1",
