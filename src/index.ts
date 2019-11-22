@@ -8,7 +8,7 @@ const timeoutFn: (millis: number, error?: Error) => Promise<never> = (
     setTimeout(
       () =>
         reject(
-          error ||
+          error ??
             new TimeoutError(`Promise timed out after ${millis} milliseconds`)
         ),
       millis

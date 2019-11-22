@@ -37,17 +37,17 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@types/node": "^12.7.2",
-    "ava": "^2.3.0",
-    "coveralls": "^3.0.6",
+    "@types/node": "^12.12.11",
+    "ava": "^2.4.0",
+    "coveralls": "^3.0.8",
     "nyc": "^14.1.1",
-    "prettier": "^1.18.2",
+    "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
-    "ts-node": "^8.3.0",
-    "tslint": "^5.19.0",
+    "ts-node": "^8.5.2",
+    "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.5.3"
+    "typescript": "^3.7.2"
   },
   "ava": {
     "compileEnhancements": false,
