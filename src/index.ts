@@ -20,6 +20,12 @@ const pTimeout: <T>(
   milliseconds?: number,
   error?: Error
 ) => Promise<T> = (promise, milliseconds = 1000 * 10, error) => {
+  if (typeof promise !== 'function') {
+    throw new TypeError(
+      'Expected `milliseconds` to be a promise-returning function'
+    )
+  }
+
   if (typeof milliseconds !== 'number' || milliseconds < 0) {
     throw new TypeError('Expected `milliseconds` to be a positive number')
   }
