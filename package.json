@@ -1,6 +1,6 @@
 {
   "name": "@lolpants/ptimeout",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Set a limit on promise execution time",
   "keywords": [
     "promise",
