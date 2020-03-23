@@ -6,7 +6,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/lolPants/pTimeout/badge.svg?branch=master)](https://coveralls.io/github/lolPants/pTimeout?branch=master)
 
 _Set a limit on promise execution time._
-Written in TypeScript, compiled down to ES2017 for use in any Node.js >=8.x!
+Written in TypeScript, compiled down to ES2017 for use in any Node.js >=10.x!
 
 ## 💾 Installation
 The package is on the NPM registry as `@lolpants/ptimeout`. Simply install it with your NPM client of choice.
